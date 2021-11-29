@@ -1,0 +1,7 @@
+.timer_wrapper {
+  display: flex;
+}
+
+.btns_wrapper button:not(.btns_wrapper button:first-child) {
+  margin-left: 10px;
+}
