@@ -14,7 +14,11 @@ function App() {
       .subscribe(
         () => {
           if (buttonState === 'start') {
-            setCounter(prevCounter => prevCounter + 1);
+            setCounter(
+              prevCounter => (prevCounter !== 359999)
+                                ? prevCounter + 1
+                                : 0
+            );
             console.log('start');
           }
         }
@@ -60,7 +64,7 @@ function App() {
       .pipe(
         filter(e => e.target.dataset.btn === 'wait'),
         buffer(clickListener$.pipe(debounceTime(300))),
-        // if array is greater than 1, double click occured
+        // if array is greater than 1, double click occurred
         map(value => value.length),
         //get value of array length
         filter(value => value === 2),
@@ -79,8 +83,7 @@ function App() {
   return (
     <div className={s.App}>
       <header className={s.App_header}>
-        <span>{counter}</span>
-        <Controls />
+        <Controls counter={counter} />
       </header>
     </div>
   );

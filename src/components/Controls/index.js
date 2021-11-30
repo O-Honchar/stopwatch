@@ -1,12 +1,15 @@
 import s from './style.module.css';
+import timeParser from '../../functions/timeParser';
 
-function Controls({ hours, minutes, seconds }) {
+function Controls({ counter }) {
+    const time = timeParser(counter);
+
     return (
         <>
             <div className={s.timer_wrapper}>
-                <div className='hours'>{hours='00'}</div>:
-                <div className='minutes'>{minutes='00'}</div>:
-                <div className='seconds'>{seconds='00'}</div>
+                <div className='hours'>{time.HH}</div>:
+                <div className='minutes'>{time.MM}</div>:
+                <div className='seconds'>{time.SS}</div>
             </div>
             <div className={s.btns_wrapper}>
                 <button type='button' data-btn='start'>Start</button>
