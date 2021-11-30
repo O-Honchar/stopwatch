@@ -19,7 +19,7 @@ function App() {
                                 ? prevCounter + 1
                                 : 0
             );
-            console.log('start');
+            // console.log('start');
           }
         }
       );
@@ -27,19 +27,19 @@ function App() {
     if (buttonState === 'stop') {
       setCounter(0);
       subscribe$.unsubscribe();
-      console.log('stop');
+      // console.log('stop');
     }
 
     if (buttonState === 'wait') {
       subscribe$.unsubscribe();
-      console.log('wait');
+      // console.log('wait');
     }
 
     if (buttonState === 'reset') {
       setCounter(0);
       subscribe$.unsubscribe();
       setButtonState('start');
-      console.log('reset');
+      // console.log('reset');
     }
 
     return () => subscribe$.unsubscribe();
@@ -66,7 +66,7 @@ function App() {
         buffer(clickListener$.pipe(debounceTime(300))),
         // if array is greater than 1, double click occurred
         map(value => value.length),
-        //get value of array length
+        // get value of array length
         filter(value => value === 2),
         mapTo('wait')
     );
