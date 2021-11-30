@@ -1,4 +1,5 @@
 import s from './style.module.css';
+import PropTypes from 'prop-types';
 import timeParser from '../../functions/timeParser';
 
 function Controls({ counter }) {
@@ -20,5 +21,9 @@ function Controls({ counter }) {
         </>
     );
 }
+
+Controls.propTypes = {
+    counter: PropTypes.number.isRequired
+};
 
 export default Controls;
