@@ -82,9 +82,7 @@ function App() {
 
   return (
     <div className={s.App}>
-      <header className={s.App_header}>
-        <Controls counter={counter} />
-      </header>
+      <Controls counter={counter} />
     </div>
   );
 }
