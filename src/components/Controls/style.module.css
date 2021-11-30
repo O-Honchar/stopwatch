@@ -1,0 +1,18 @@
+.timer_wrapper {
+  display: flex;
+  font-size: calc(60px + 2vmin);
+  color: white;
+}
+
+button {
+  width: 55px;
+  height: 30px;
+}
+
+.btns_wrapper {
+  min-width: 260px;
+}
+
+.btns_wrapper button:not(.btns_wrapper button:first-child) {
+  margin-left: 10px;
+}
